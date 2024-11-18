@@ -1,0 +1,362 @@
+[
+  {
+    "_id": "1a2b3c4d5e",
+    "brand_name": "Daraz",
+    "rating": 4.5,
+    "description": "Daraz is an online marketplace offering a variety of products.",
+    "brand_logo": "https://example.com/logos/daraz.png",
+    "coupons": [
+      {
+        "coupon_code": "DARAZ10",
+        "description": "Get 10% off on all items.",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $50.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIP",
+        "description": "Free shipping on orders above $30.",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for all categories.",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "FLASHSALE",
+        "description": "Up to 70% off on flash sale items.",
+        "expiry_date": "2024-11-20",
+        "condition": "Limited to selected products.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "BANKOFFER",
+        "description": "Extra 10% off with partner banks.",
+        "expiry_date": "2024-12-25",
+        "condition": "Applicable on credit card payments.",
+        "coupon_type": "Bank Offer"
+      }
+    ],
+    "shop-Link": "https://www.daraz.com",
+    "category": "Marketplace",
+    "isSaleOn": true
+  },
+  {
+    "_id": "2f3g4h5i6j",
+    "brand_name": "Chaldal",
+    "rating": 4.2,
+    "description": "Chaldal delivers groceries to your doorstep.",
+    "brand_logo": "https://example.com/logos/chaldal.png",
+    "coupons": [
+      {
+        "coupon_code": "GROCERY5",
+        "description": "Flat $5 off on grocery orders.",
+        "expiry_date": "2024-11-25",
+        "condition": "Only for new users.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "DAILY10",
+        "description": "10% off on daily essentials.",
+        "expiry_date": "2024-11-30",
+        "condition": "Maximum discount $15.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FESTIVE15",
+        "description": "15% off during festive seasons.",
+        "expiry_date": "2024-12-31",
+        "condition": "No minimum order value.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "REFERRAL20",
+        "description": "20% off for referral sign-ups.",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable only once.",
+        "coupon_type": "Promotion"
+      }
+    ],
+    "shop-Link": "https://www.chaldal.com",
+    "category": "Grocery",
+    "isSaleOn": false
+  },
+  {
+    "_id": "3k4l5m6n7o",
+    "brand_name": "Pickaboo",
+    "rating": 4.0,
+    "description": "Pickaboo offers electronics, gadgets, and accessories.",
+    "brand_logo": "https://example.com/logos/pickaboo.png",
+    "coupons": [
+      {
+        "coupon_code": "PICK20",
+        "description": "20% off on mobile accessories.",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable on select items.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "TECH30",
+        "description": "Flat 30% off on tech gadgets.",
+        "expiry_date": "2024-11-28",
+        "condition": "Valid for first 100 customers.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FLASHDEAL50",
+        "description": "50% off on flash deals.",
+        "expiry_date": "2024-12-05",
+        "condition": "Limited to 1 item per customer.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "GADGETFREE",
+        "description": "Free gadget on orders above $500.",
+        "expiry_date": "2024-12-31",
+        "condition": "While supplies last.",
+        "coupon_type": "Gift"
+      }
+    ],
+    "shop-Link": "https://www.pickaboo.com",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "_id": "4p5q6r7s8t",
+    "brand_name": "Rokomari",
+    "rating": 4.8,
+    "description": "Rokomari is the best destination for books in Bangladesh.",
+    "brand_logo": "https://example.com/logos/rokomari.png",
+    "coupons": [
+      {
+        "coupon_code": "BOOKS15",
+        "description": "15% discount on books.",
+        "expiry_date": "2024-12-20",
+        "condition": "Only for books above $10.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "READMORE20",
+        "description": "20% off for orders over $50.",
+        "expiry_date": "2024-11-30",
+        "condition": "Applicable on all categories.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "EDUCATE10",
+        "description": "Flat $10 off on educational books.",
+        "expiry_date": "2024-12-10",
+        "condition": "Minimum order value $30.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIPPINGBOOKS",
+        "description": "Free shipping on book orders.",
+        "expiry_date": "2024-12-25",
+        "condition": "No minimum order value.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop-Link": "https://www.rokomari.com",
+    "category": "Books",
+    "isSaleOn": false
+  },
+  {
+    "_id": "5u6v7w8x9y",
+    "brand_name": "Ajkerdeal",
+    "rating": 3.9,
+    "description": "Ajkerdeal is an online shopping platform.",
+    "brand_logo": "https://example.com/logos/ajkerdeal.png",
+    "coupons": [
+      {
+        "coupon_code": "DEAL50",
+        "description": "Up to 50% off on selected deals.",
+        "expiry_date": "2024-11-30",
+        "condition": "No minimum order value.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "HOTDEAL10",
+        "description": "10% additional discount on hot deals.",
+        "expiry_date": "2024-12-05",
+        "condition": "Limited stock available.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "FREEDELIVERY",
+        "description": "Free delivery on orders over $20.",
+        "expiry_date": "2024-12-15",
+        "condition": "Not valid for COD.",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "SEASONSALE",
+        "description": "25% off during seasonal sale.",
+        "expiry_date": "2024-12-31",
+        "condition": "Applicable on selected items.",
+        "coupon_type": "Discount"
+      }
+    ],
+    "shop-Link": "https://www.ajkerdeal.com",
+    "category": "Marketplace",
+    "isSaleOn": true
+  },
+  {
+    "_id": "6z7a8b9c0d",
+    "brand_name": "Startech",
+    "rating": 4.7,
+    "description": "Startech specializes in tech products and accessories.",
+    "brand_logo": "https://example.com/logos/startech.png",
+    "coupons": [
+      {
+        "coupon_code": "TECH10",
+        "description": "10% discount on tech products.",
+        "expiry_date": "2024-12-01",
+        "condition": "Valid for orders above $100.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "LAPTOP15",
+        "description": "15% off on laptops and accessories.",
+        "expiry_date": "2024-11-30",
+        "condition": "Maximum discount $50.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "GAMER20",
+        "description": "20% off on gaming gear.",
+        "expiry_date": "2024-12-20",
+        "condition": "Limited to first 50 users.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIPTECH",
+        "description": "Free shipping on tech orders.",
+        "expiry_date": "2024-12-25",
+        "condition": "Minimum order value $30.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop-Link": "https://www.startech.com.bd",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "_id": "7e8f9g0h1i",
+    "brand_name": "Ryans",
+    "rating": 4.4,
+    "description": "Ryans offers a range of IT products and services.",
+    "brand_logo": "https://example.com/logos/ryans.png",
+    "coupons": [
+      {
+        "coupon_code": "RYANSTECH",
+        "description": "10% off on IT accessories.",
+        "expiry_date": "2024-12-10",
+        "condition": "Applicable for online orders only.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FASTDELIVERY",
+        "description": "Free express delivery.",
+        "expiry_date": "2024-12-15",
+        "condition": "Minimum order $50.",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "EASYEMI",
+        "description": "0% EMI on select products.",
+        "expiry_date": "2024-12-31",
+        "condition": "Valid for credit card payments.",
+        "coupon_type": "Finance"
+      },
+      {
+        "coupon_code": "XMASOFFER",
+        "description": "Special 25% off during Christmas.",
+        "expiry_date": "2024-12-25",
+        "condition": "Limited to 2 items per order.",
+        "coupon_type": "Promotion"
+      }
+    ],
+    "shop-Link": "https://www.ryanscomputers.com",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "_id": "8j9k0l1m2n",
+    "brand_name": "Foodpanda",
+    "rating": 4.3,
+    "description": "Foodpanda delivers food from your favorite restaurants.",
+    "brand_logo": "https://example.com/logos/foodpanda.png",
+    "coupons": [
+      {
+        "coupon_code": "PANDA20",
+        "description": "Flat 20% off on all food orders.",
+        "expiry_date": "2024-12-01",
+        "condition": "Valid only on weekends.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREEDELIVERY",
+        "description": "Free delivery on orders over $10.",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for new users.",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "LUNCHDEAL",
+        "description": "10% off on lunch orders.",
+        "expiry_date": "2024-12-05",
+        "condition": "Applicable only between 12 PM and 3 PM.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "DINNER20",
+        "description": "20% off on dinner orders.",
+        "expiry_date": "2024-12-15",
+        "condition": "Minimum order value $20.",
+        "coupon_type": "Discount"
+      }
+    ],
+    "shop-Link": "https://www.foodpanda.com.bd",
+    "category": "Food Delivery",
+    "isSaleOn": true
+  },
+  {
+    "_id": "9o0p1q2r3s",
+    "brand_name": "Unikart",
+    "rating": 4.1,
+    "description": "Unikart offers a unique collection of lifestyle products.",
+    "brand_logo": "https://example.com/logos/unikart.png",
+    "coupons": [
+      {
+        "coupon_code": "LIFESTYLE10",
+        "description": "10% off on lifestyle products.",
+        "expiry_date": "2024-12-20",
+        "condition": "Minimum order value $30.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "WEEKEND15",
+        "description": "15% off during weekends.",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable to select categories.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "HOLIDAYSALE",
+        "description": "20% off during holiday season.",
+        "expiry_date": "2024-12-31",
+        "condition": "Maximum discount $50.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "EXTRASHIPPING",
+        "description": "Free shipping on all orders.",
+        "expiry_date": "2024-12-25",
+        "condition": "No conditions apply.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop-Link": "https://www.unikart.com.bd",
+    "category": "Lifestyle",
+    "isSaleOn": true
+  }
+]
