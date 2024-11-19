@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -47,6 +48,14 @@ const AuthProvider = ({ children }) => {
         // console.log(error.message)
       });
   };
+  // Password reset, forgot password
+  const forgotPassword = (email) => {
+     return sendPasswordResetEmail(auth, email)
+  }
+  // update user info
+  const updateProfileInfo = (updatedInfo) =>{
+    return updateProfile(auth.currentUser,updatedInfo);
+  }
   // observer
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -59,9 +68,9 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   // Updating user info
-  const updateUserProfile = (updatedInfo) => {
-    return updateProfile(auth.currentUser, updatedInfo);
-  };
+  // const updateProfileInfoAgain = (updatedInfo) => {
+  //   return updateProfile(auth.currentUser, updatedInfo);
+  // };
   const userInfo = {
     user,
     createUser,
@@ -72,8 +81,9 @@ const AuthProvider = ({ children }) => {
     logOut,
     setId,
     id,
-    updateUserProfile,
-    loading
+    updateProfileInfo,
+    loading,
+    forgotPassword,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

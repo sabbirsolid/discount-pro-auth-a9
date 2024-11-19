@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "./Navbar";
 import bg from "../assets/dark.svg"
+import { Link } from "react-router-dom";
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
 
@@ -45,9 +46,9 @@ const MyProfile = () => {
             </div>
 
             {/* Update Information Button */}
-            <button className="mt-6 px-4 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <Link to="/update-profile" className="mt-6 px-4 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Update Information
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import BrandDetails from "../components/BrandDetails";
 import MyProfile from "../components/MyProfile";
 import ForgotPassword from "../Layouts/ForgotPassword";
+import UpdateProfile from "../Layouts/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPassword></ForgotPassword>
+  },
+  {
+    path: "/update-profile",
+    element: <UpdateProfile></UpdateProfile>
   },
   {
     path: "*",
