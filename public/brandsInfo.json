@@ -1,3 +1,4 @@
+
 [
   {
     "_id": "1a2b3c4d5e",
@@ -44,7 +45,7 @@
     "brand_name": "Chaldal",
     "rating": 4.2,
     "description": "Chaldal delivers groceries to your doorstep.",
-    "brand_logo": "https://example.com/logos/chaldal.png",
+    "brand_logo": "https://i.ibb.co.com/kQxZVX3/chaldal.png",
     "coupons": [
       {
         "coupon_code": "GROCERY5",
@@ -84,20 +85,13 @@
     "brand_name": "Pickaboo",
     "rating": 4.0,
     "description": "Pickaboo offers electronics, gadgets, and accessories.",
-    "brand_logo": "https://example.com/logos/pickaboo.png",
+    "brand_logo": "https://i.ibb.co.com/sRX3k4Y/pickaboo.webp",
     "coupons": [
       {
         "coupon_code": "PICK20",
         "description": "20% off on mobile accessories.",
         "expiry_date": "2024-12-15",
         "condition": "Applicable on select items.",
-        "coupon_type": "Discount"
-      },
-      {
-        "coupon_code": "TECH30",
-        "description": "Flat 30% off on tech gadgets.",
-        "expiry_date": "2024-11-28",
-        "condition": "Valid for first 100 customers.",
         "coupon_type": "Discount"
       },
       {
@@ -124,7 +118,7 @@
     "brand_name": "Rokomari",
     "rating": 4.8,
     "description": "Rokomari is the best destination for books in Bangladesh.",
-    "brand_logo": "https://example.com/logos/rokomari.png",
+    "brand_logo": "https://i.ibb.co.com/pQZFNyd/Rokomari.png",
     "coupons": [
       {
         "coupon_code": "BOOKS15",
@@ -164,7 +158,7 @@
     "brand_name": "Ajkerdeal",
     "rating": 3.9,
     "description": "Ajkerdeal is an online shopping platform.",
-    "brand_logo": "https://example.com/logos/ajkerdeal.png",
+    "brand_logo": "https://i.ibb.co.com/bvxtR4h/ajkerdeal.png",
     "coupons": [
       {
         "coupon_code": "DEAL50",
@@ -204,15 +198,8 @@
     "brand_name": "Startech",
     "rating": 4.7,
     "description": "Startech specializes in tech products and accessories.",
-    "brand_logo": "https://example.com/logos/startech.png",
+    "brand_logo": "https://i.ibb.co.com/rZycYSv/startech.jpg",
     "coupons": [
-      {
-        "coupon_code": "TECH10",
-        "description": "10% discount on tech products.",
-        "expiry_date": "2024-12-01",
-        "condition": "Valid for orders above $100.",
-        "coupon_type": "Discount"
-      },
       {
         "coupon_code": "LAPTOP15",
         "description": "15% off on laptops and accessories.",
@@ -244,7 +231,7 @@
     "brand_name": "Ryans",
     "rating": 4.4,
     "description": "Ryans offers a range of IT products and services.",
-    "brand_logo": "https://example.com/logos/ryans.png",
+    "brand_logo": "https://i.ibb.co.com/59Xkfgy/ryans.jpg",
     "coupons": [
       {
         "coupon_code": "RYANSTECH",
@@ -284,7 +271,7 @@
     "brand_name": "Foodpanda",
     "rating": 4.3,
     "description": "Foodpanda delivers food from your favorite restaurants.",
-    "brand_logo": "https://example.com/logos/foodpanda.png",
+    "brand_logo": "https://i.ibb.co.com/rF2mL1f/foodpanda.jpg",
     "coupons": [
       {
         "coupon_code": "PANDA20",
@@ -321,10 +308,10 @@
   },
   {
     "_id": "9o0p1q2r3s",
-    "brand_name": "Unikart",
+    "brand_name": "Fabrilife",
     "rating": 4.1,
-    "description": "Unikart offers a unique collection of lifestyle products.",
-    "brand_logo": "https://example.com/logos/unikart.png",
+    "description": "Fabrilife offers a unique collection of lifestyle products.",
+    "brand_logo": "https://i.ibb.co.com/98B96NP/fabrilife.jpg",
     "coupons": [
       {
         "coupon_code": "LIFESTYLE10",
@@ -333,11 +320,38 @@
         "condition": "Minimum order value $30.",
         "coupon_type": "Discount"
       },
+    
       {
-        "coupon_code": "WEEKEND15",
-        "description": "15% off during weekends.",
-        "expiry_date": "2024-12-15",
-        "condition": "Applicable to select categories.",
+        "coupon_code": "HOLIDAYSALE",
+        "description": "20% off during holiday season.",
+        "expiry_date": "2024-12-31",
+        "condition": "Maximum discount $50.",
+        "coupon_type": "Promotion"
+      },
+      {
+        "coupon_code": "EXTRASHIPPING",
+        "description": "Free shipping on all orders.",
+        "expiry_date": "2024-12-25",
+        "condition": "No conditions apply.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shopLink": "https://fabrilife.com/",
+    "category": "Lifestyle",
+    "isSaleOn": true
+  },
+  {
+    "_id": "9o0p1q2rs3s",
+    "brand_name": "Othoba",
+    "rating": 4.1,
+    "description": "Othoba offers a unique collection of lifestyle products.",
+    "brand_logo": "https://i.ibb.co.com/8brXn9X/othoba.jpg",
+    "coupons": [
+      {
+        "coupon_code": "LIFESTYLE10",
+        "description": "10% off on lifestyle products.",
+        "expiry_date": "2024-12-20",
+        "condition": "Minimum order value $30.",
         "coupon_type": "Discount"
       },
       {
@@ -355,8 +369,8 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shopLink": "https://www.unikart.com.bd",
-    "category": "Lifestyle",
-    "isSaleOn": true
+    "shopLink": "https://www.othoba.com/",
+    "category": "Marketplace",
+    "isSaleOn": false
   }
 ]
