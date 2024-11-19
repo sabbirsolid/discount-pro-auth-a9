@@ -5,16 +5,18 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   // states
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
-  const [id, setId]  = useState(null);
+  const [id, setId] = useState(null);
+  const [loading, setLoading] = useState(true);
   // data loading
   useEffect(() => {
     fetch("../../public/brandsInfo.json")
@@ -33,25 +35,33 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
   //sign in with google
-  const googleProvider = new GoogleAuthProvider()
-  const signInWithGoogle = ()  => {
+  const googleProvider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
-  }
+  };
   // Logout
   const logOut = () => {
     signOut(auth)
-      .then(console.log("sign out successful"))
-      .catch((error) => console.log(error.message));
+      .then()
+      .catch((error) => {
+        // console.log(error.message)
+      });
   };
   // observer
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)
+      setUser(currentUser);
+      setLoading(false);
     });
     return () => {
-      unSubscribe()
+      unSubscribe();
     };
   }, []);
+
+  // Updating user info
+  const updateUserProfile = (updatedInfo) => {
+    return updateProfile(auth.currentUser, updatedInfo);
+  };
   const userInfo = {
     user,
     createUser,
@@ -61,7 +71,9 @@ const AuthProvider = ({ children }) => {
     setUser,
     logOut,
     setId,
-    id
+    id,
+    updateUserProfile,
+    loading
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

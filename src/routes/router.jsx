@@ -8,6 +8,7 @@ import Login from "../Layouts/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import BrandDetails from "../components/BrandDetails";
 import MyProfile from "../components/MyProfile";
+import ForgotPassword from "../Layouts/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -36,31 +37,30 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
-    path: "/private/brand-details",
-    element: (
-      <PrivateRoutes>
-        <BrandDetails></BrandDetails>
-      </PrivateRoutes>
-    ),
-    // children:[
-    //   {
-    //     path: "/private/brand-details",
-    //     element: <BrandDetails></BrandDetails>
-    //   },
-    //   {
-    //     path: "/private/my-profile",
-    //     element: <MyProfile></MyProfile>
-    //   }
-    // ]
+    path: '/private/brand-details/:id',
+    element: <PrivateRoutes>
+      <BrandDetails></BrandDetails>
+    </PrivateRoutes>,
+    loader: async ({ params }) => {
+      const response = await fetch('../../public/brandsInfo.json');
+      const brands = await response.json();
+      return brands.find((brand) => brand._id === params.id);
+    }
   },
+
   {
     path: "/private/my-profile",
     element: (
       <PrivateRoutes>
-        <MyProfile></MyProfile>
+        <MyProfile></MyProfile> 
       </PrivateRoutes>
     ),
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword></ForgotPassword>
   },
   {
     path: "*",

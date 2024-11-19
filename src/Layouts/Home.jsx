@@ -3,6 +3,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import BrandsInfo from '../components/BrandsInfo';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
                 <Banner></Banner>
                 <BrandsInfo></BrandsInfo>
             </main>
+            <Footer></Footer>
         </div>
     );
 };

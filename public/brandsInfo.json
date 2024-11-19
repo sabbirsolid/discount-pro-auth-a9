@@ -4,7 +4,7 @@
     "brand_name": "Daraz",
     "rating": 4.5,
     "description": "Daraz is an online marketplace offering a variety of products.",
-    "brand_logo": "https://example.com/logos/daraz.png",
+    "brand_logo": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Daraz_Logo.png",
     "coupons": [
       {
         "coupon_code": "DARAZ10",
@@ -35,7 +35,7 @@
         "coupon_type": "Bank Offer"
       }
     ],
-    "shop-Link": "https://www.daraz.com",
+    "shopLink": "https://www.daraz.com",
     "category": "Marketplace",
     "isSaleOn": true
   },
@@ -75,7 +75,7 @@
         "coupon_type": "Promotion"
       }
     ],
-    "shop-Link": "https://www.chaldal.com",
+    "shopLink": "https://www.chaldal.com",
     "category": "Grocery",
     "isSaleOn": false
   },
@@ -115,7 +115,7 @@
         "coupon_type": "Gift"
       }
     ],
-    "shop-Link": "https://www.pickaboo.com",
+    "shopLink": "https://www.pickaboo.com",
     "category": "Electronics",
     "isSaleOn": true
   },
@@ -155,7 +155,7 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shop-Link": "https://www.rokomari.com",
+    "shopLink": "https://www.rokomari.com",
     "category": "Books",
     "isSaleOn": false
   },
@@ -195,7 +195,7 @@
         "coupon_type": "Discount"
       }
     ],
-    "shop-Link": "https://www.ajkerdeal.com",
+    "shopLink": "https://www.ajkerdeal.com",
     "category": "Marketplace",
     "isSaleOn": true
   },
@@ -235,7 +235,7 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shop-Link": "https://www.startech.com.bd",
+    "shopLink": "https://www.startech.com.bd",
     "category": "Electronics",
     "isSaleOn": true
   },
@@ -275,7 +275,7 @@
         "coupon_type": "Promotion"
       }
     ],
-    "shop-Link": "https://www.ryanscomputers.com",
+    "shopLink": "https://www.ryanscomputers.com",
     "category": "Electronics",
     "isSaleOn": true
   },
@@ -315,7 +315,7 @@
         "coupon_type": "Discount"
       }
     ],
-    "shop-Link": "https://www.foodpanda.com.bd",
+    "shopLink": "https://www.foodpanda.com.bd",
     "category": "Food Delivery",
     "isSaleOn": true
   },
@@ -355,7 +355,7 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shop-Link": "https://www.unikart.com.bd",
+    "shopLink": "https://www.unikart.com.bd",
     "category": "Lifestyle",
     "isSaleOn": true
   }

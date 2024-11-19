@@ -1,29 +1,21 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import "../Styles/Navbar.css"
+const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
 
-const links = (
+  const links = (
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/brands">Brands</NavLink>
-      <NavLink to="/private/my-profile">my-Profile</NavLink>
       <NavLink to="/about">About Dev</NavLink>
-
-      {/* {
-        loggedUser &&  <NavLink to="/order">Orders</NavLink>
-      }
-      {
-        loggedUser &&  <NavLink to="/profile">Profile</NavLink>
-      } */}
+      {user && <NavLink to="/private/my-profile">My Profile</NavLink>}
     </>
   );
-  
-const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext);
-  
-  // console.log();
-    return (
-        <div className="navbar bg-base-200">
+
+  return (
+    <div className="navbar bg-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +36,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content space-y-5  bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content space-y-5 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
@@ -55,18 +47,30 @@ const Navbar = () => {
         <ul className="menu menu-horizontal space-x-5 px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        {
-            user? <>
-            <p>{user?.email}</p>
-            <button onClick={logOut} className="btn">Sign Out</button>
-            </> : <Link className="btn" to="/auth/login"  >Login</Link>
-        }
-        {/* <p>{user?.email}</p>
-        <Link className="btn" to='/auth/login'>Login</Link>
-        <button className="btn" onClick={logOut} >Logout</button> */}
+        {user ? (
+          <>
+            <div className="flex items-center space-x-2">
+              <p>{user?.displayName}</p>
+              {user?.photoURL && (
+                <img
+                  src={user.photoURL}
+                  alt="Display picture"
+                  className="w-8 h-8 rounded-full"
+                />
+              )}
+            </div>
+            <button onClick={logOut} className="btn">
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <Link className="btn" to="/auth/login">
+            Login
+          </Link>
+        )}
       </div>
     </div>
-    );
+  );
 };
 
 export default Navbar;

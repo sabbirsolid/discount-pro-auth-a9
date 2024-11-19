@@ -4,8 +4,12 @@ import { Navigate } from "react-router-dom";
 
 
 const PrivateRoutes = ({children}) => {
-    const {user} = useContext(AuthContext);
+    const {user,loading} = useContext(AuthContext);
     // console.log(user);
+    if (loading) {
+        // Show a loading indicator while authentication is being determined
+        return <div>Loading...</div>;
+      }
     if(user && user?.email){
         return children
     }
