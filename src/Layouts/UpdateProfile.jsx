@@ -23,7 +23,7 @@ const UpdateProfile = () => {
 
   return (
     <div className="">
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className=" w-4/12 mx-auto mt-10">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
         <h1 className="text-2xl font-bold">Update Your Profile Information</h1>

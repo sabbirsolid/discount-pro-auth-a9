@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   // data loading
   useEffect(() => {
-    fetch("../../public/brandsInfo.json")
+    fetch("/brandsInfo.json")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -66,11 +66,7 @@ const AuthProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
-
-  // Updating user info
-  // const updateProfileInfoAgain = (updatedInfo) => {
-  //   return updateProfile(auth.currentUser, updatedInfo);
-  // };
+// object containing data,functions
   const userInfo = {
     user,
     createUser,

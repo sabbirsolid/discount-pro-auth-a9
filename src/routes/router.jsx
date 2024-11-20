@@ -10,20 +10,54 @@ import BrandDetails from "../components/BrandDetails";
 import MyProfile from "../components/MyProfile";
 import ForgotPassword from "../Layouts/ForgotPassword";
 import UpdateProfile from "../Layouts/UpdateProfile";
+import TopCoupons from "../components/TopCoupons";
+import HomeLayout from "../Layouts/HomeLayout";
+import ExclusiveDeals from "../components/ExclusiveDeals";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    children: [
+      {
+        path:"/",
+        element: <HomeLayout></HomeLayout>
+      },
+      {
+        path: "/brands",
+        element: <Brands></Brands>,
+      },
+      {
+        path: "/about",
+        element: <h1>About</h1>,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword></ForgotPassword>
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path: "/top-coupons",
+        element: <TopCoupons></TopCoupons>
+      },
+      {
+        path: "/exclusive-deals",
+        element: <ExclusiveDeals></ExclusiveDeals>
+      }
+      
+    ]
   },
-  {
-    path: "/brands",
-    element: <Brands></Brands>,
-  },
-  {
-    path: "/about",
-    element: <h1>About</h1>,
-  },
+  // {
+  //   path: "/brands",
+  //   element: <Brands></Brands>,
+  // },
+  // {
+  //   path: "/about",
+  //   element: <h1>About</h1>,
+  // },
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
@@ -45,7 +79,7 @@ const router = createBrowserRouter([
       <BrandDetails></BrandDetails>
     </PrivateRoutes>,
     loader: async ({ params }) => {
-      const response = await fetch('../../public/brandsInfo.json');
+      const response = await fetch('/brandsInfo.json');
       const brands = await response.json();
       return brands.find((brand) => brand._id === params.id);
     }
@@ -59,14 +93,18 @@ const router = createBrowserRouter([
       </PrivateRoutes>
     ),
   },
-  {
-    path: "/forgot-password",
-    element: <ForgotPassword></ForgotPassword>
-  },
-  {
-    path: "/update-profile",
-    element: <UpdateProfile></UpdateProfile>
-  },
+  // {
+  //   path: "/forgot-password",
+  //   element: <ForgotPassword></ForgotPassword>
+  // },
+  // {
+  //   path: "/update-profile",
+  //   element: <UpdateProfile></UpdateProfile>
+  // },
+  // {
+  //   path: "/top-coupons",
+  //   element: <TopCoupons></TopCoupons>
+  // },
   {
     path: "*",
     element: <Error></Error>,

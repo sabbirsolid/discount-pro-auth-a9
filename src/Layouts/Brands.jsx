@@ -9,20 +9,29 @@ const Brands = () => {
   //   console.log(data);
   return (
     <div className=" space-y-5">
-      <nav>
+      {/* <nav>
         <Navbar></Navbar>
-      </nav>
-      {/* Header */}
-      <h1 className="font-bold text-3xl text-center text-gray-700">
-        Select Your Brands from the List
-      </h1>
-      <div className="join flex justify-center items-center">
-        <input
-          className="input input-bordered join-item"
-          placeholder="type your brand name"
-        />
-        <button className="btn join-item rounded-r-full">Search</button>
-      </div>
+      </nav> */}
+      {/* Section Header */}
+      <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+  <h1 className="font-bold text-3xl text-center text-gray-700 mb-6">
+    Select Your Brands from the List
+  </h1>
+  <div className="join flex justify-center items-center">
+    {/* Input Field */}
+    <input
+      className="input input-bordered join-item flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="Type your brand name"
+    />
+    {/* Search Button */}
+    <button
+      className="join-item bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-r-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all duration-300"
+    >
+      Search
+    </button>
+  </div>
+</div>
+
       {/* main cards */}
       <div className="flex flex-col w-11/12 sm:w-10/12 lg:w-8/12 mx-auto gap-6">
   {data.map((brand) => (
@@ -81,9 +90,6 @@ const Brands = () => {
     </div>
   ))}
 </div>
-
-
-
     </div>
   );
 };

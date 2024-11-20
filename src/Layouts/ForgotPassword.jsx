@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import { toast } from "react-toastify";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 
 const ForgotPassword = () => {
-    const {forgotPassword}  = useContext(AuthContext);
+    const {forgotPassword,logOut}  = useContext(AuthContext);
 
   const handlePasswordReset = (event) => {
     event.preventDefault();
@@ -29,7 +28,6 @@ const ForgotPassword = () => {
 
   return (
    <div>
-    <Navbar></Navbar>
     <div className="card bg-base-100 mt-10 w-3/12 mx-auto shrink-0 shadow-2xl py-5">
         
         <h1 className="text-3xl font-semibold text-center">Reset Password</h1>
@@ -49,10 +47,10 @@ const ForgotPassword = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button
+            <button href="https://mail.google.com" onClick={logOut}
               type="submit"
               className="btn btn-primary">
-                Send
+                Send Reset Email
             </button>
           </div>
         </form>

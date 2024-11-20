@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import Navbar from "./Navbar";
 import bg from "../assets/dark.svg"
 import { Link } from "react-router-dom";
 const MyProfile = () => {
@@ -8,7 +7,6 @@ const MyProfile = () => {
 
   return (
     <div>
-        <Navbar></Navbar>
       {/* Cover Section */}
       <div
         className="relative bg-cover bg-center h-64"

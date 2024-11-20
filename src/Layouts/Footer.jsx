@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             <a
-              href="https://facebook.com/yourprofile"
+              href="https://www.facebook.com/sabbir.solid"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -37,7 +37,7 @@ const Footer = () => {
               <FaFacebook size={20} />
             </a>
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://x.com/sabbir_solid?t=ENm4_g3Np2MDRdZwXRsuRg&s=09"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -53,7 +53,7 @@ const Footer = () => {
               <FaInstagram size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/sabbir-ahmed-b78668205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -65,7 +65,7 @@ const Footer = () => {
         
         {/* Copyright Section */}
         <div className="mt-6 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Your E-commerce Brand. All rights reserved.</p>
+          <p>© {new Date().getFullYear()}, Discount Pro, All rights reserved. </p>
         </div>
       </div>
     </footer>

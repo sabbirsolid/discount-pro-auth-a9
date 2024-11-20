@@ -77,9 +77,6 @@ const BrandsInfo = () => {
   )}
 </Link>
 
-
-
-
     </div>
   );
 };

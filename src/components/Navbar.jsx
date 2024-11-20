@@ -9,6 +9,8 @@ const Navbar = () => {
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/brands">Brands</NavLink>
+      <NavLink to="/top-coupons">Top Coupons</NavLink>
+      <NavLink to="/exclusive-deals">Exclusive </NavLink>
       <NavLink to="/about">About Dev</NavLink>
       {user && <NavLink to="/private/my-profile">My Profile</NavLink>}
     </>
@@ -52,11 +54,13 @@ const Navbar = () => {
             <div className="flex items-center space-x-2">
               <p>{user?.displayName}</p>
               {user?.photoURL && (
-                <img
+               <Link to="/private/my-profile">
+                <img 
                   src={user.photoURL}
                   alt="Display picture"
                   className="w-8 h-8 rounded-full"
                 />
+               </Link>
               )}
             </div>
             <button onClick={logOut} className="btn">

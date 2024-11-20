@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import BrandsInfo from '../components/BrandsInfo';
 import Footer from './Footer';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -12,8 +13,9 @@ const Home = () => {
                 <Navbar></Navbar>
             </header>
             <main>
-                <Banner></Banner>
-                <BrandsInfo></BrandsInfo>
+                <Outlet></Outlet>
+                {/* <Banner></Banner>
+                <BrandsInfo></BrandsInfo> */}
             </main>
             <Footer></Footer>
         </div>
