@@ -1,17 +1,21 @@
-
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import bg from "../assets/dark.svg";
+import bg from "/dark.svg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
 
   return (
     <div>
+       <Helmet>
+                <title>My Profile | Discount Pro</title>
+               
+            </Helmet>
       {/* Cover Section */}
       <div
-        className="relative bg-cover bg-center h-64"
+        className="relative bg-cover bg-center h-80"
         style={{
           backgroundImage: `url(${bg})`,
         }}

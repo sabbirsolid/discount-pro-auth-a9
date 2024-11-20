@@ -3,12 +3,17 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const BrandDetails = () => {
 const data = useLoaderData();
 const { coupons, shopLink} = data;
 return (
   <div>
+     <Helmet>
+                <title>Brand Details | Discount Pro</title>
+               
+            </Helmet>
   <div className="flex flex-col lg:flex-row gap-10 items-center justify-center bg-white shadow-lg rounded-lg p-6 lg:p-10 border border-gray-300">
   {/* Brand Logo */}
   <div className="w-[200px] flex-shrink-0">

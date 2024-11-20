@@ -1,31 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
-
-const exclusiveDealsData = [
-  {
-    _id: "1",
-    description: "Flat 70% Off on Fashion!",
-    coupon_code: "EXC70",
-    expiry_date: "2024-11-25T23:59:59", // ISO date for the timer
-    condition: "Valid on all orders above $50",
-    image: "https://via.placeholder.com/200", // Replace with actual deal image
-  },
-  {
-    _id: "2",
-    description: "Get $20 Off on Electronics",
-    coupon_code: "EXC20",
-    expiry_date: "2024-11-30T23:59:59",
-    condition: "Applicable on selected items",
-    image: "https://via.placeholder.com/200",
-  },
-];
+import React, { useState, useEffect} from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 
 const ExclusiveDeals = () => {
-    
-
   const [timeLeft, setTimeLeft] = useState({});
-//   const {selectedCoupons} = useContext(AuthContext);
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
@@ -62,6 +42,10 @@ const ExclusiveDeals = () => {
 
   return (
     <div className="lg:w-9/12 w-11/12 mx-auto p-6">
+       <Helmet>
+                <title>Exclusive Deals | Discount Pro</title>
+               
+            </Helmet>
       <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
         Exclusive Deals
       </h1>
@@ -81,9 +65,14 @@ const ExclusiveDeals = () => {
             <p className="text-sm text-red-500 font-semibold mt-2">
               {timeLeft[deal._id] || "Loading..."}
             </p>
-            <button className="mt-4 bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300">
-              Copy Code: {deal.coupon_code}
-            </button>
+            <CopyToClipboard
+          text={deal.coupon_code}
+          onCopy={() => toast.success(`Successfully Copied! Code: ${deal.coupon_code}`)}
+        >
+          <button className="mt-4 bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300">
+            Copy Code
+          </button>
+        </CopyToClipboard>
           </div>
         ))}
       </div>

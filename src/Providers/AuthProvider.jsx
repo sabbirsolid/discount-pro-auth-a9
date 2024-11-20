@@ -18,14 +18,15 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [id, setId] = useState(null);
   const [inputEmail, setInputEmail] = useState("")
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
+  
 
   // data loading
   useEffect(() => {
     fetch("/brandsInfo.json")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
+     
         setData(data);
       });
   }, []);
@@ -47,7 +48,7 @@ const AuthProvider = ({ children }) => {
     signOut(auth)
       .then()
       .catch((error) => {
-        // console.log(error.message)
+   
       });
   };
   // Password reset, forgot password

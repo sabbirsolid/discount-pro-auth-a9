@@ -1,17 +1,18 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'animate.css'; 
 
 const Banner = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto my-10">
       <Carousel
         infiniteLoop
         useKeyboardArrows
         autoPlay
         showThumbs={false}
         showStatus={false}
-        showIndicators={true} // Enable indicators at the bottom
+        showIndicators={true}
         dynamicHeight={false}
         swipeable
         emulateTouch
@@ -21,7 +22,7 @@ const Banner = () => {
         stopOnHover
         renderArrowPrev={(clickHandler) => (
           <button
-            className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10"
+            className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10 animate__animated animate__fadeInLeft"
             onClick={clickHandler}
           >
             &lt;
@@ -29,39 +30,41 @@ const Banner = () => {
         )}
         renderArrowNext={(clickHandler) => (
           <button
-            className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10"
+            className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10 animate__animated animate__fadeInRight"
             onClick={clickHandler}
           >
             &gt;
           </button>
         )}
+
       >
-        <div>
+       
+        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
-            src="https://i.ibb.co.com/qNbRft4/3.jpg"
+            src="https://i.ibb.co.com/2SGbVqN/4.jpg"
             alt="image 1"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[350px] object-cover"
           />
         </div>
-        <div>
+        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
-            src="https://i.ibb.co.com/qNbRft4/3.jpg"
+            src="https://i.ibb.co.com/QpCcNxF/3.jpg"
             alt="image 2"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[350px] object-cover"
           />
         </div>
-        <div>
+        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
-            src="https://i.ibb.co.com/qNbRft4/3.jpg"
+            src="https://i.ibb.co.com/gy0fpVG/2.jpg"
             alt="image 3"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[350px] object-cover"
           />
         </div>
-        <div>
+        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
-            src="https://i.ibb.co.com/qNbRft4/3.jpg"
+            src="https://i.ibb.co.com/3C7Jfr1/1.jpg "
             alt="image 4"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[350px] object-cover"
           />
         </div>
       </Carousel>

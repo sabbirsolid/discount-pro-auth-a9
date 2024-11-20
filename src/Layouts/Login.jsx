@@ -1,88 +1,24 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../Providers/AuthProvider";
-// import { Link, useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
-
-// const Login = () => {
-//     const {setUser,logIn,signInWithGoogle,setInputEmail} = useContext(AuthContext)
-//     const navigate = useNavigate()
-//     const handleSubmit = (event) => {
-//         event.preventDefault()
-//         const email = event.target.email.value;
-//         const password = event.target.password.value;
-//         // login
-//         setInputEmail(email)
-//         logIn(email, password)
-//         .then(result => {
-//             // console.log(result.user)
-//             setUser(result.user)
-//             toast.success('Successfully Logged In')
-//             navigate('/')
-//         })
-//         .catch(error => {
-//           // console.log(error)
-//           toast.error('Login Error:', error)
-//         })
-//     }
-//     const handleSignInWithGoogle =()=>{
-//         signInWithGoogle()
-//         .then(result => {
-//           // console.log(result.user)
-//           navigate("/");
-
-//         })
-//         .catch(error => {
-//           // console.log(error.message)
-//         })
-//     }
-//     return (
-//         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
-//             <h1 className="text-3xl font-semibold text-center">Login Now</h1>
-//       <form onSubmit={handleSubmit} className="card-body">
-//         <div className="form-control">
-//           <label className="label">
-//             <span className="label-text">Email</span>
-//           </label>
-//           <input name="email" type="email" placeholder="email" className="input input-bordered" required />
-//         </div>
-//         <div className="form-control">
-//           <label className="label">
-//             <span className="label-text">Password</span>
-//           </label>
-//           <input name="password" type="password" placeholder="password" className="input input-bordered" required />
-//           <label className="label">
-//             <Link to="/forgot-password"  clssName="label-text-alt link link-hover">Forgot password?</Link>
-//           </label>
-//         </div>
-//         <div className="form-control mt-6">
-//           <button className="btn btn-primary">Login</button>
-//         </div>
-//       </form>
-//       <p className="text-center">Don't have an Account? <Link to='/auth/register' className="font-semibold text-blue-600">Register</Link> </p>
-//       <button onClick={handleSignInWithGoogle} className="btn btn-sm w-6/12 mx-auto mt-3">Sign in with Google</button>
-//     </div>
-//     );
-// };
-
-// export default Login;
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { setUser, logIn, signInWithGoogle, setInputEmail } =
     useContext(AuthContext);
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false); // For toggling password visibility
+  const [showPassword, setShowPassword] = useState(false);
+  const [emailOnChange, setEmailOnChange] = useState('');
+  setInputEmail(emailOnChange);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    setInputEmail(email);
+    // setInputEmail(email);
     logIn(email, password)
       .then((result) => {
         setUser(result.user);
@@ -97,15 +33,20 @@ const Login = () => {
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
+        toast.success("Successfully Logged In");
         navigate("/");
       })
       .catch((error) => {
-        console.error(error.message);
+        
       });
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
+    <div className="flex justify-center items-center py-10 bg-gray-100 px-4">
+       <Helmet>
+                <title>Login | Discount Pro</title>
+               
+            </Helmet>
       <div className="w-full max-w-md p-8 border border-gray-200 shadow-lg rounded-lg bg-white">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Login Now
@@ -120,6 +61,8 @@ const Login = () => {
               placeholder="Enter your email"
               className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
+              value={emailOnChange}  // Bind state to input field
+              onChange={(e) => setEmailOnChange(e.target.value)} 
             />
           </div>
 
