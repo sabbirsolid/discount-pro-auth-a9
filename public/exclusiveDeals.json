@@ -1,0 +1,43 @@
+[
+    {
+      "brand_id": "1a2b3c4d5e",
+      "brand_name": "Daraz",
+      "coupon_code": "DARAZ10",
+      "description": "Get 10% off on all items.",
+      "expiry_date": "2024-12-31",
+      "condition": "Minimum purchase of $50."
+    },
+    {
+      "brand_id": "3k4l5m6n7o",
+      "brand_name": "Pickaboo",
+      "coupon_code": "PICK20",
+      "description": "20% off on mobile accessories.",
+      "expiry_date": "2024-12-15",
+      "condition": "Applicable on select items."
+    },
+    {
+      "brand_id": "6z7a8b9c0d",
+      "brand_name": "Startech",
+      "coupon_code": "GAMER20",
+      "description": "20% off on gaming gear.",
+      "expiry_date": "2024-12-20",
+      "condition": "Limited to first 50 users."
+    },
+    {
+      "brand_id": "9o0p1q2rs3s",
+      "brand_name": "Othoba",
+      "coupon_code": "HOLIDAYSALE",
+      "description": "20% off during holiday season.",
+      "expiry_date": "2024-12-31",
+      "condition": "Maximum discount $50."
+    },
+    {
+      "brand_id": "4p5q6r7s8t",
+      "brand_name": "Rokomari",
+      "coupon_code": "READMORE20",
+      "description": "20% off for orders over $50.",
+      "expiry_date": "2024-11-30",
+      "condition": "Applicable on all categories."
+    }
+  ]
+  

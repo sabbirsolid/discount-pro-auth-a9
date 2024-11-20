@@ -17,7 +17,9 @@ const AuthProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
   const [id, setId] = useState(null);
+  const [inputEmail, setInputEmail] = useState("")
   const [loading, setLoading] = useState(true);
+
   // data loading
   useEffect(() => {
     fetch("/brandsInfo.json")
@@ -80,6 +82,8 @@ const AuthProvider = ({ children }) => {
     updateProfileInfo,
     loading,
     forgotPassword,
+    inputEmail, 
+    setInputEmail
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

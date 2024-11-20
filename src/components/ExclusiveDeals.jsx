@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const exclusiveDealsData = [
   {
@@ -19,10 +20,20 @@ const exclusiveDealsData = [
   },
 ];
 
-const ExclusiveDeals = () => {
-  const [deals, setDeals] = useState(exclusiveDealsData);
-  const [timeLeft, setTimeLeft] = useState({});
 
+const ExclusiveDeals = () => {
+    
+
+  const [timeLeft, setTimeLeft] = useState({});
+//   const {selectedCoupons} = useContext(AuthContext);
+  const [deals, setDeals] = useState([]);
+
+  useEffect(() => {
+    fetch('/exclusiveDeals.json')
+    .then(response => response.json())
+    .then(data => setDeals(data));
+},[])
+  
   // Calculate countdown for each deal
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,11 +71,7 @@ const ExclusiveDeals = () => {
             key={deal._id}
             className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 p-5 flex flex-col"
           >
-            <img
-              src={deal.image}
-              alt={deal.description}
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
+            <h1 className="text-2xl font-bold text-gray-800 mb-2">{deal.brand_name}</h1>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               {deal.description}
             </h3>

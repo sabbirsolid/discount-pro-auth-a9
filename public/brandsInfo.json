@@ -16,7 +16,7 @@
       },
       {
         "coupon_code": "FREESHIP",
-        "description": "Free shipping on orders above $30.",
+        "description": "Free shipping on orders above 2 products.",
         "expiry_date": "2024-11-30",
         "condition": "Valid for all categories.",
         "coupon_type": "Shipping"
@@ -103,7 +103,7 @@
       },
       {
         "coupon_code": "GADGETFREE",
-        "description": "Free gadget on orders above $500.",
+        "description": "Free gadget on orders above 5 products.",
         "expiry_date": "2024-12-31",
         "condition": "While supplies last.",
         "coupon_type": "Gift"

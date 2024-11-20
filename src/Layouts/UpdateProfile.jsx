@@ -1,7 +1,8 @@
-import { useContext, useState } from "react";
+
+import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
   const { updateProfileInfo } = useContext(AuthContext);
@@ -11,57 +12,66 @@ const UpdateProfile = () => {
     event.preventDefault();
     const name = event.target.name.value;
     const photoURL = event.target.photoURL.value;
-    // Update profile using Firebase's updateProfile method
     updateProfileInfo({ displayName: name, photoURL: photoURL })
       .then(() => {
-        navigate("/private/my-profile"); // Redirect to the profile page after successful update
+        navigate("/private/my-profile");
+        toast.success("Successfully Updated Information")
       })
       .catch((error) => {
-        setError("Failed to update profile: " + error.message);
+        console.error("Failed to update profile: ", error.message);
       });
   };
 
   return (
-    <div className="">
-      {/* <Navbar></Navbar> */}
-      <div className=" w-4/12 mx-auto mt-10">
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
-        <h1 className="text-2xl font-bold">Update Your Profile Information</h1>
-
-        {/* Form to update Name and Photo URL */}
+    <div className="flex items-center justify-center py-10 bg-gray-100">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8 border border-gray-200">
+        <h1 className="text-3xl font-semibold text-center text-gray-800">
+          Update Profile
+        </h1>
+        <p className="text-gray-500 text-center mt-2">
+          Keep your profile up to date by editing your information below.
+        </p>
         <form onSubmit={handleUpdate} className="mt-6">
           <div className="form-control mb-4">
-            <label className="label">Name</label>
+            <label htmlFor="name" className="block text-gray-700 font-medium">
+              Name
+            </label>
             <input
               type="text"
               name="name"
+              id="name"
               placeholder="Enter your name"
-              className="input input-bordered"
+              className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div className="form-control mb-4">
-            <label className="label">Photo URL</label>
+            <label
+              htmlFor="photoURL"
+              className="block text-gray-700 font-medium"
+            >
+              Photo URL
+            </label>
             <input
               type="text"
               name="photoURL"
+              id="photoURL"
               placeholder="Enter your photo URL"
-              className="input input-bordered"
+              className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
-          {/* Display error message if any */}
-          {/* {error && <p className="text-red-500">{error}</p>} */}
-
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="w-full py-3 rounded-md text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md"
+            >
               Update Information
             </button>
           </div>
         </form>
-      </div>
       </div>
     </div>
   );
