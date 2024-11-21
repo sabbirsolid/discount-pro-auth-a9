@@ -7,9 +7,6 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { setUser, logIn, signInWithGoogle, setInputEmail,loading } = useContext(AuthContext);
-
-  
-
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailOnChange, setEmailOnChange] = useState('');

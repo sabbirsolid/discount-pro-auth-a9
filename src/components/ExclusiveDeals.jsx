@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 
 const ExclusiveDeals = () => {

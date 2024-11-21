@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
-  const { updateProfileInfo,loading } = useContext(AuthContext);
+  const { updateProfileInfo, loading } = useContext(AuthContext);
   const navigate = useNavigate();
   if (loading) {
     return (
@@ -22,19 +22,16 @@ const UpdateProfile = () => {
     updateProfileInfo({ displayName: name, photoURL: photoURL })
       .then(() => {
         navigate("/private/my-profile");
-        toast.success("Successfully Updated Information")
+        toast.success("Successfully Updated Information");
       })
-      .catch((error) => {
-        
-      });
+      .catch((error) => {});
   };
 
   return (
     <div className="flex items-center justify-center py-10 bg-gray-100">
-       <Helmet>
-                <title>Update Profile | Discount Pro</title>
-               
-            </Helmet>
+      <Helmet>
+        <title>Update Profile | Discount Pro</title>
+      </Helmet>
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8 border border-gray-200">
         <h1 className="text-3xl font-semibold text-center text-gray-800">
           Update Profile
