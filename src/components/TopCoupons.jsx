@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
@@ -16,9 +15,6 @@ const TopCoupons = () => {
 
   return (
     <div className="lg:w-9/12 w-11/12 mx-auto p-6">
-      <Helmet>
-        <title>Top Coupons | Discount Pro</title>
-      </Helmet>
       <div className="bg-gray-50 py-10 shadow-lg rounded-lg">
   <h1 className="text-4xl font-extrabold text-gray-800 text-center mb-4">
     Top Coupons

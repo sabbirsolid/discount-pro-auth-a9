@@ -41,9 +41,7 @@ const ExclusiveDeals = () => {
 
   return (
     <div className="lg:w-9/12 w-11/12 mx-auto p-6">
-      <Helmet>
-        <title>Exclusive Deals | Discount Pro</title>
-      </Helmet>
+      
       <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
         Some Exclusive Deals from Other Brands
       </h1>

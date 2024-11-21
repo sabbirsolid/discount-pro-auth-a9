@@ -71,3 +71,4 @@ This project implements user authentication for a discount and coupon management
 ## Live Links
 
 - https://discounts-pro.web.app/
+- Alternative Link: https://discounts-pro.firebaseapp.com/

@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const AboutDev = () => {
   return (
     <div className="bg-gray-50 py-10 px-4">
+      <Helmet>
+        <title>About Dev | Discount Pro</title>
+      </Helmet>
       <div className="max-w-3xl mx-auto bg-white p-6 shadow-lg rounded-lg">
         {/* Title Section */}
         <h1 className="text-4xl font-extrabold text-gray-800 mb-4 text-center">
@@ -32,22 +36,27 @@ const AboutDev = () => {
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">Projects</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
           <li>
-            <strong className="text-indigo-600">Discount Pro:</strong> A discount and coupon management
-            platform with user authentication and Google sign-in.
+            <strong className="text-indigo-600">Discount Pro:</strong> A
+            discount and coupon management platform with user authentication and
+            Google sign-in.
           </li>
           <li>
-            <strong className="text-indigo-600">Gadget Heaven:</strong> An e-commerce platform featuring a
-            product catalog, shopping cart, and wishlist functionality.
+            <strong className="text-indigo-600">Gadget Heaven:</strong> An
+            e-commerce platform featuring a product catalog, shopping cart, and
+            wishlist functionality.
           </li>
           <li>
-            <strong className="text-indigo-600">Portfolio Website:</strong> A personal website showcasing
-            my skills, projects, and contact information.
+            <strong className="text-indigo-600">Portfolio Website:</strong> A
+            personal website showcasing my skills, projects, and contact
+            information.
           </li>
         </ul>
 
         {/* Contact Info Section */}
         <div className="mt-6 text-center">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Contact Info</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            Contact Info
+          </h3>
           <p className="text-lg text-gray-700">
             Feel free to reach out to me via email:{" "}
             <a
