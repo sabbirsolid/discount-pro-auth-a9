@@ -18,7 +18,7 @@ const Navbar = () => {
             : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
         }
       >
-       <FaHome /> Home
+        <FaHome /> Home
       </NavLink>
       <NavLink
         to="/brands"
@@ -28,9 +28,9 @@ const Navbar = () => {
             : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
         }
       >
-       <MdBrandingWatermark /> Brands
+        <MdBrandingWatermark /> Brands
       </NavLink>
-      
+
       {user && (
         <NavLink
           to="/private/my-profile"
@@ -40,8 +40,8 @@ const Navbar = () => {
               : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
           }
         >
-         <MdAccountBox />
-         My Profile
+          <MdAccountBox />
+          My Profile
         </NavLink>
       )}
       <NavLink
@@ -52,9 +52,8 @@ const Navbar = () => {
             : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
         }
       >
-       <IoMdInformationCircleOutline /> About Dev
+        <IoMdInformationCircleOutline /> About Dev
       </NavLink>
-      
     </>
   );
 
@@ -91,16 +90,25 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-2xl hidden lg:block font-bold text-indigo-600">
-          Discount Pro
-        </Link>
+        <Link 
+  to="/" 
+  className="text-4xl font-extrabold hidden lg:block">
+  <span className="text-blue-600">Discount</span>
+  <span className="text-indigo-600">Pro</span>
+</Link>
+
+
       </div>
 
       {/* Navbar Center */}
       <div className="navbar-start lg:hidden">
-      {user ? (
+        {user ? (
           <p className="text-gray-700 text-sm">
-            Welcome, <span className="font-semibold text-indigo-600">{user.displayName}</span>!
+            Welcome,{" "}
+            <span className="font-semibold text-indigo-600">
+              {user.displayName}
+            </span>
+            !
           </p>
         ) : (
           ""
@@ -109,12 +117,18 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex lg:flex-col justify-center">
         {user ? (
           <p className="text-gray-700 text-lg font-medium">
-            Welcome, <span className="font-semibold text-indigo-600">{user.displayName}</span>!
+            Welcome,{" "}
+            <span className="font-semibold text-indigo-600">
+              {user.displayName}
+            </span>
+            !
           </p>
         ) : (
           ""
         )}
-        <ul className="menu menu-horizontal space-x-6 text-gray-700">{links}</ul>
+        <ul className="menu menu-horizontal space-x-6 text-gray-700">
+          {links}
+        </ul>
       </div>
 
       {/* Navbar End */}
@@ -122,8 +136,10 @@ const Navbar = () => {
         {user ? (
           <>
             <div className="flex items-center space-x-1">
-              <p className="text-gray-700 hidden lg:block font-medium">{user?.email}</p>
-            
+              <p className="text-gray-700 hidden lg:block font-medium">
+                {user?.email}
+              </p>
+
               {user.photoURL && (
                 <Link to="/private/my-profile">
                   <img
