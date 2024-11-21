@@ -43,6 +43,7 @@ const Register = () => {
         updateProfileInfo({ displayName: name, photoURL: photo })
           .then(() => {
             navigate("/");
+            toast.success('Successfully Created!')
           })
           .catch((error) => {
             setError(`Failed to update profile: ${error.message}`); // Handle profile update errors
