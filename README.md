@@ -70,4 +70,4 @@ This project implements user authentication for a discount and coupon management
 
 ## Live Links
 
-- **Surge:** [https://discounts-pro.web.app/](#)
+- https://discounts-pro.web.app/
