@@ -1,5 +1,3 @@
-
-
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -125,7 +123,7 @@ const Navbar = () => {
           <>
             <div className="flex items-center space-x-1">
               <p className="text-gray-700 hidden lg:block font-medium">{user?.email}</p>
-              <img src={user.photoURL} alt="" />
+            
               {user.photoURL && (
                 <Link to="/private/my-profile">
                   <img

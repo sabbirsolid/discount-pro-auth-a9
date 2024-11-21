@@ -27,8 +27,12 @@ const Register = () => {
       setError("Password must be at least 6 characters long.");
       return;
     }
-    if(loading){
-      return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
+    if (loading) {
+      return (
+        <div className="flex justify-center items-center min-h-screen bg-gray-50">
+          <span className="loading loading-spinner text-info text-5xl"></span>
+        </div>
+      );
     }
   
     setError(""); // Clear error if the password is valid

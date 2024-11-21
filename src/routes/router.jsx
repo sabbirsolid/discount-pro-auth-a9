@@ -13,6 +13,7 @@ import UpdateProfile from "../Layouts/UpdateProfile";
 import TopCoupons from "../components/TopCoupons";
 import HomeLayout from "../Layouts/HomeLayout";
 import ExclusiveDeals from "../components/ExclusiveDeals";
+import AboutDev from "../components/AboutDev";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <h1>About</h1>,
+        element: <AboutDev></AboutDev>
       },
       {
         path: "/forgot-password",
@@ -39,25 +40,12 @@ const router = createBrowserRouter([
         path: "/update-profile",
         element: <UpdateProfile></UpdateProfile>
       },
-      // {
-      //   path: "/private/top-coupons",
-      //   element: <TopCoupons></TopCoupons>
-      // },
-      // {
-      //   path: "/exclusive-deals",
-      //   element: <ExclusiveDeals></ExclusiveDeals>
-      // }
-      
+      {
+        path: "/top-coupons",
+        element: <TopCoupons></TopCoupons>
+      },    
     ]
   },
-  // {
-  //   path: "/brands",
-  //   element: <Brands></Brands>,
-  // },
-  // {
-  //   path: "/about",
-  //   element: <h1>About</h1>,
-  // },
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
@@ -91,14 +79,6 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoutes>
         <MyProfile></MyProfile> 
-      </PrivateRoutes>
-    ),
-  },
-  {
-    path: "/private/top-coupons",
-    element: (
-      <PrivateRoutes>
-        <TopCoupons></TopCoupons>
       </PrivateRoutes>
     ),
   },

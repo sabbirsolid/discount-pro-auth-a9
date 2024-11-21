@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
@@ -6,8 +5,15 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
-  const { updateProfileInfo } = useContext(AuthContext);
+  const { updateProfileInfo,loading } = useContext(AuthContext);
   const navigate = useNavigate();
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-50">
+        <span className="loading loading-spinner text-info text-5xl"></span>
+      </div>
+    );
+  }
 
   const handleUpdate = (event) => {
     event.preventDefault();

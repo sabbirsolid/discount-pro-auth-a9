@@ -5,7 +5,15 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user,loading } = useContext(AuthContext);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-50">
+        <span className="loading loading-spinner text-info text-5xl"></span>
+      </div>
+    );
+  }
 
   return (
     <div>

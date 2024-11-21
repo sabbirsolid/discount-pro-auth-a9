@@ -8,21 +8,30 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
   const { setUser, logIn, signInWithGoogle, setInputEmail,loading } = useContext(AuthContext);
 
-  if(loading){
-    return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
-  }
+  
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailOnChange, setEmailOnChange] = useState('');
-  setInputEmail(emailOnChange);
+  const [error, setError] = useState("");
 
+  // setting input for reset
+  setInputEmail(emailOnChange);
+  // loading spinner
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-50">
+        <span className="loading loading-spinner text-info text-5xl"></span>
+      </div>
+    );
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
 
     // setInputEmail(email);
+    setError("");
     logIn(email, password)
       .then((result) => {
         setUser(result.user);
@@ -30,13 +39,14 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error(`Login Error: ${error.message}`);
+        setError(`Failed to Login: ${error.message}`);
       });
       event.target.email.value = "";
       event.target.password.value = "";
   };
 
   const handleSignInWithGoogle = () => {
+    setError("");
     signInWithGoogle()
       .then((result) => {
         setUser(result.user);
@@ -44,7 +54,7 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.success(`Error: ${error.message}`);
+        setError(`Failed to Login: ${error.message}`);
       });
   };
 
@@ -98,6 +108,7 @@ const Login = () => {
                 Forgot password?
               </Link>
             </label>
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </div>
 
           {/* Submit Button */}

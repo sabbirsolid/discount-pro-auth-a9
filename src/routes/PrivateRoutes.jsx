@@ -7,8 +7,11 @@ import Footer from "../Layouts/Footer";
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
-    // Show a loading indicator while authentication is being determined
-    return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-50">
+        <span className="loading loading-spinner text-info text-5xl"></span>
+      </div>
+    );
   }
   if (user && user?.email) {
     return (

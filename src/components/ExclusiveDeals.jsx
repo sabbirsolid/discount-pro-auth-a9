@@ -65,16 +65,28 @@ const ExclusiveDeals = () => {
             <p className="text-sm text-red-500 font-semibold mt-2">
               {timeLeft[deal._id] || "Loading..."}
             </p>
-            <CopyToClipboard
-              text={deal.coupon_code}
-              onCopy={() =>
-                toast.success(`Successfully Copied! Code: ${deal.coupon_code}`)
-              }
-            >
-              <button className="mt-4 bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300">
-                Copy Code
-              </button>
-            </CopyToClipboard>
+            <div className="flex flex-wrap gap-5 mt-4">
+              <CopyToClipboard
+                text={deal.coupon_code}
+                onCopy={() =>
+                  toast.success(
+                    `Successfully Copied! Code: ${deal.coupon_code}`
+                  )
+                }
+              >
+                <button className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold text-sm uppercase rounded-lg shadow-lg hover:from-green-600 hover:to-teal-700 hover:shadow-xl transition-transform transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-teal-300">
+                  Copy Code
+                </button>
+              </CopyToClipboard>
+              <a
+                href={deal.shopLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold text-sm uppercase rounded-lg shadow-lg hover:from-green-600 hover:to-teal-700 hover:shadow-xl transition-transform transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-teal-300"
+              >
+                Use Now
+              </a>
+            </div>
           </div>
         ))}
       </div>

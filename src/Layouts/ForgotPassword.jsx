@@ -6,9 +6,17 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const ForgotPassword = () => {
-  const { forgotPassword, logOut, inputEmail } = useContext(AuthContext);
+  const { forgotPassword, logOut, inputEmail,loading } = useContext(AuthContext);
   const navigate = useNavigate()
   const [emailOnChange, setEmailOnChange] = useState(inputEmail)
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-50">
+        <span className="loading loading-spinner text-info text-5xl"></span>
+      </div>
+    );
+  }
 
   const handlePasswordReset = (event) => {
     event.preventDefault();
