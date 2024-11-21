@@ -6,8 +6,12 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { setUser, logIn, signInWithGoogle, setInputEmail } =
-    useContext(AuthContext);
+  const { setUser, logIn, signInWithGoogle, setInputEmail,loading } = useContext(AuthContext);
+
+  if(loading){
+    return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
+  }
+
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailOnChange, setEmailOnChange] = useState('');
@@ -28,16 +32,19 @@ const Login = () => {
       .catch((error) => {
         toast.error(`Login Error: ${error.message}`);
       });
+      event.target.email.value = "";
+      event.target.password.value = "";
   };
 
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
+        setUser(result.user);
         toast.success("Successfully Logged In");
         navigate("/");
       })
       .catch((error) => {
-        
+        toast.success(`Error: ${error.message}`);
       });
   };
 
@@ -61,7 +68,7 @@ const Login = () => {
               placeholder="Enter your email"
               className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
-              value={emailOnChange}  // Bind state to input field
+              value={emailOnChange} 
               onChange={(e) => setEmailOnChange(e.target.value)} 
             />
           </div>
@@ -81,7 +88,7 @@ const Login = () => {
               className="absolute right-3 top-14 text-gray-500"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <FaEye /> : <FaEyeSlash />}
+              {showPassword ? <FaEyeSlash />  : <FaEye />}
             </button>
             <label className="label mt-1">
               <Link

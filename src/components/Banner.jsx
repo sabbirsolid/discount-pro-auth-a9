@@ -9,7 +9,7 @@ const Banner = () => {
       <Carousel
         infiniteLoop
         useKeyboardArrows
-        autoPlay
+        autoPlay={false}
         showThumbs={false}
         showStatus={false}
         showIndicators={true}
@@ -39,32 +39,32 @@ const Banner = () => {
 
       >
        
-        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
+        <div className="lg:w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
             src="https://i.ibb.co.com/2SGbVqN/4.jpg"
             alt="image 1"
-            className="w-full h-[350px] object-cover"
+            className="w-full lg:h-[350px] object-cover"
           />
         </div>
-        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
+        <div className="lg:w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
             src="https://i.ibb.co.com/QpCcNxF/3.jpg"
             alt="image 2"
-            className="w-full h-[350px] object-cover"
+            className="w-full lg:h-[350px] object-cover"
           />
         </div>
-        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
+        <div className="lg:w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
             src="https://i.ibb.co.com/gy0fpVG/2.jpg"
             alt="image 3"
-            className="w-full h-[350px] object-cover"
+            className="w-full lg:h-[350px] object-cover"
           />
         </div>
-        <div className="w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
+        <div className="lg:w-8/12 mx-auto object-cover animate__animated animate__fadeIn">
           <img
             src="https://i.ibb.co.com/3C7Jfr1/1.jpg "
             alt="image 4"
-            className="w-full h-[350px] object-cover"
+            className="w-full lg:h-[350px] object-cover"
           />
         </div>
       </Carousel>

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../Layouts/Footer";
 
@@ -8,7 +8,7 @@ const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
     // Show a loading indicator while authentication is being determined
-    return <div className="min-h-screen"><span className="loading loading-spinner text-info"></span></div>;
+    return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
   }
   if (user && user?.email) {
     return (

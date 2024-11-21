@@ -43,6 +43,7 @@ const AuthProvider = ({ children }) => {
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
+
   // Logout
   const logOut = () => {
     signOut(auth)

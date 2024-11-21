@@ -1,19 +1,18 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
-
 
 const ExclusiveDeals = () => {
   const [timeLeft, setTimeLeft] = useState({});
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch('/exclusiveDeals.json')
-    .then(response => response.json())
-    .then(data => setDeals(data));
-},[])
-  
+    fetch("/exclusiveDeals.json")
+      .then((response) => response.json())
+      .then((data) => setDeals(data));
+  }, []);
+
   // Calculate countdown for each deal
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,12 +41,11 @@ const ExclusiveDeals = () => {
 
   return (
     <div className="lg:w-9/12 w-11/12 mx-auto p-6">
-       <Helmet>
-                <title>Exclusive Deals | Discount Pro</title>
-               
-            </Helmet>
+      <Helmet>
+        <title>Exclusive Deals | Discount Pro</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-        Exclusive Deals
+        Some Exclusive Deals from Other Brands
       </h1>
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-5">
         {deals.map((deal) => (
@@ -55,7 +53,9 @@ const ExclusiveDeals = () => {
             key={deal._id}
             className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 p-5 flex flex-col"
           >
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">{deal.brand_name}</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-2">
+              {deal.brand_name}
+            </h1>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               {deal.description}
             </h3>
@@ -66,13 +66,15 @@ const ExclusiveDeals = () => {
               {timeLeft[deal._id] || "Loading..."}
             </p>
             <CopyToClipboard
-          text={deal.coupon_code}
-          onCopy={() => toast.success(`Successfully Copied! Code: ${deal.coupon_code}`)}
-        >
-          <button className="mt-4 bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300">
-            Copy Code
-          </button>
-        </CopyToClipboard>
+              text={deal.coupon_code}
+              onCopy={() =>
+                toast.success(`Successfully Copied! Code: ${deal.coupon_code}`)
+              }
+            >
+              <button className="mt-4 bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300">
+                Copy Code
+              </button>
+            </CopyToClipboard>
           </div>
         ))}
       </div>

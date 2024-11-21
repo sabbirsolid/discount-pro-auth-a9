@@ -39,14 +39,14 @@ const router = createBrowserRouter([
         path: "/update-profile",
         element: <UpdateProfile></UpdateProfile>
       },
-      {
-        path: "/top-coupons",
-        element: <TopCoupons></TopCoupons>
-      },
-      {
-        path: "/exclusive-deals",
-        element: <ExclusiveDeals></ExclusiveDeals>
-      }
+      // {
+      //   path: "/private/top-coupons",
+      //   element: <TopCoupons></TopCoupons>
+      // },
+      // {
+      //   path: "/exclusive-deals",
+      //   element: <ExclusiveDeals></ExclusiveDeals>
+      // }
       
     ]
   },
@@ -77,6 +77,7 @@ const router = createBrowserRouter([
     path: '/private/brand-details/:id',
     element: <PrivateRoutes>
       <BrandDetails></BrandDetails>
+      <ExclusiveDeals></ExclusiveDeals>
     </PrivateRoutes>,
     loader: async ({ params }) => {
       const response = await fetch('/brandsInfo.json');
@@ -93,18 +94,14 @@ const router = createBrowserRouter([
       </PrivateRoutes>
     ),
   },
-  // {
-  //   path: "/forgot-password",
-  //   element: <ForgotPassword></ForgotPassword>
-  // },
-  // {
-  //   path: "/update-profile",
-  //   element: <UpdateProfile></UpdateProfile>
-  // },
-  // {
-  //   path: "/top-coupons",
-  //   element: <TopCoupons></TopCoupons>
-  // },
+  {
+    path: "/private/top-coupons",
+    element: (
+      <PrivateRoutes>
+        <TopCoupons></TopCoupons>
+      </PrivateRoutes>
+    ),
+  },
   {
     path: "*",
     element: <Error></Error>,

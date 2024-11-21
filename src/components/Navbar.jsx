@@ -1,6 +1,11 @@
+
+
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { FaHome } from "react-icons/fa";
+import { MdAccountBox, MdBrandingWatermark } from "react-icons/md";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -11,64 +16,47 @@ const Navbar = () => {
         to="/"
         className={({ isActive }) =>
           isActive
-            ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-            : "hover:text-indigo-600 transition-colors duration-200"
+            ? "text-indigo-600 font-semibold flex items-center gap-1 border-b-2 border-indigo-600"
+            : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
         }
       >
-        Home
+       <FaHome /> Home
       </NavLink>
       <NavLink
         to="/brands"
         className={({ isActive }) =>
           isActive
-            ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-            : "hover:text-indigo-600 transition-colors duration-200"
+            ? "text-indigo-600 font-semibold flex items-center gap-1 border-b-2 border-indigo-600"
+            : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
         }
       >
-        Brands
+       <MdBrandingWatermark /> Brands
       </NavLink>
-      <NavLink
-        to="/top-coupons"
-        className={({ isActive }) =>
-          isActive
-            ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-            : "hover:text-indigo-600 transition-colors duration-200"
-        }
-      >
-        Top Coupons
-      </NavLink>
-      <NavLink
-        to="/exclusive-deals"
-        className={({ isActive }) =>
-          isActive
-            ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-            : "hover:text-indigo-600 transition-colors duration-200"
-        }
-      >
-        Exclusive
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          isActive
-            ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-            : "hover:text-indigo-600 transition-colors duration-200"
-        }
-      >
-        About Dev
-      </NavLink>
+      
       {user && (
         <NavLink
           to="/private/my-profile"
           className={({ isActive }) =>
             isActive
-              ? "text-indigo-600 font-semibold border-b-2 border-indigo-600"
-              : "hover:text-indigo-600 transition-colors duration-200"
+              ? "text-indigo-600 font-semibold flex items-center gap-1 border-b-2 border-indigo-600"
+              : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
           }
         >
-          My Profile
+         <MdAccountBox />
+         My Profile
         </NavLink>
       )}
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive
+            ? "text-indigo-600 font-semibold flex items-center gap-1 border-b-2 border-indigo-600"
+            : "hover:text-indigo-600 flex items-center gap-1 transition-colors duration-200"
+        }
+      >
+       <IoMdInformationCircleOutline /> About Dev
+      </NavLink>
+      
     </>
   );
 
@@ -76,12 +64,11 @@ const Navbar = () => {
     <div className="navbar bg-white shadow-lg lg:px-6">
       {/* Navbar Start */}
       <div className="navbar-start">
-        {/* Dropdown for Mobile */}
         <div className="dropdown">
           <div
             tabIndex={0}
             role="button"
-            className=" to-indigo-600 hover:from-blue-600 hover:to-indigo-700 lg:hidden"
+            className="to-indigo-600 hover:from-blue-600 hover:to-indigo-700 lg:hidden"
             aria-label="Menu"
           >
             <svg
@@ -106,23 +93,40 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link  to="/" className="text-2xl hidden lg:block font-bold text-indigo-600">
+        <Link to="/" className="text-2xl hidden lg:block font-bold text-indigo-600">
           Discount Pro
         </Link>
       </div>
 
       {/* Navbar Center */}
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-start lg:hidden">
+      {user ? (
+          <p className="text-gray-700 text-sm">
+            Welcome, <span className="font-semibold text-indigo-600">{user.displayName}</span>!
+          </p>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="navbar-center hidden lg:flex lg:flex-col justify-center">
+        {user ? (
+          <p className="text-gray-700 text-lg font-medium">
+            Welcome, <span className="font-semibold text-indigo-600">{user.displayName}</span>!
+          </p>
+        ) : (
+          ""
+        )}
         <ul className="menu menu-horizontal space-x-6 text-gray-700">{links}</ul>
       </div>
 
       {/* Navbar End */}
-      <div className="navbar-end flex items-center space-x-4">
+      <div className="navbar-end flex items-center space-x-2">
         {user ? (
           <>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1">
               <p className="text-gray-700 hidden lg:block font-medium">{user?.email}</p>
-              {user?.photoURL && (
+              <img src={user.photoURL} alt="" />
+              {user.photoURL && (
                 <Link to="/private/my-profile">
                   <img
                     src={user.photoURL}
@@ -134,18 +138,26 @@ const Navbar = () => {
             </div>
             <button
               onClick={logOut}
-              className="px-4 py-2 text-white font-medium rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md transition-all"
+              className="px-2 py-2 text-white font-medium rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md transition-all"
             >
               Logout
             </button>
           </>
         ) : (
-          <Link
-            to="/auth/login"
-            className="px-4 py-2 text-white font-medium rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md transition-all"
-          >
-            Login
-          </Link>
+          <div className="space-x-3">
+            <Link
+              to="/auth/login"
+              className="px-2 py-2 text-white font-medium rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md transition-all"
+            >
+              Login
+            </Link>
+            <Link
+              to="/auth/register"
+              className="px-2 py-2 text-white font-medium rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md transition-all"
+            >
+              Register
+            </Link>
+          </div>
         )}
       </div>
     </div>
@@ -153,5 +165,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

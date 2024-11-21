@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-  const { createUser, updateProfileInfo, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, updateProfileInfo, signInWithGoogle,loading} = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false); 
@@ -27,6 +27,9 @@ const Register = () => {
       setError("Password must be at least 6 characters long.");
       return;
     }
+    if(loading){
+      return <div className="min-h-screen mx-auto"><span className="loading loading-spinner text-info"></span></div>;
+    }
   
     setError(""); // Clear error if the password is valid
   
@@ -45,7 +48,6 @@ const Register = () => {
         setError(`Failed to register: ${error.message}`); // Display registration errors
       });
   
-    // Clear form inputs
     event.target.email.value = "";
     event.target.password.value = "";
     event.target.PhotoURL.value = "";
@@ -55,12 +57,12 @@ const Register = () => {
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
+        setUser(result.user);
         toast.success('Successfully Login')
         navigate("/");
-
       })
       .catch((error) => {
-        
+        toast.success(`Error: ${error.message}`);
       });
   };
 
@@ -124,7 +126,7 @@ const Register = () => {
               className="absolute right-3 top-14 text-gray-500 hover:text-gray-700"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <FaEye /> : <FaEyeSlash />}
+              {showPassword ?  <FaEyeSlash />:<FaEye /> }
             </button>
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </div>

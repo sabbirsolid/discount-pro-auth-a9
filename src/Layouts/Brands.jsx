@@ -8,10 +8,9 @@ const Brands = () => {
   const { data, setId } = useContext(AuthContext);
   return (
     <div className=" space-y-5 py-5">
-       <Helmet>
-                <title>Brands | Discount Pro</title>
-               
-            </Helmet>
+      <Helmet>
+        <title>Brands | Discount Pro</title>
+      </Helmet>
       {/* Section Header */}
       <div className="p-6  rounded-lg shadow-md">
         <h1 className="font-bold text-3xl text-center text-gray-700 mb-6">
@@ -27,7 +26,15 @@ const Brands = () => {
           <button className=" bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
             Search
           </button>
+          <Link
+              to="/private/top-coupons"
+              className=" bg-indigo-700 hover:bg-indigo-800 text-white font-semibold btn rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Top Coupons
+            </Link>
+          
         </div>
+        
       </div>
 
       {/* main cards */}

@@ -45,14 +45,6 @@ const Footer = () => {
               <FaTwitter size={20} />
             </a>
             <a
-              href="https://instagram.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
               href="https://www.linkedin.com/in/sabbir-ahmed-b78668205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
@@ -65,7 +57,7 @@ const Footer = () => {
         
         {/* Copyright Section */}
         <div className="mt-6 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()}, Discount Pro, All rights reserved. </p>
+          <p>© {new Date().getFullYear()}, Discount Pro, All Rights Reserved. </p>
         </div>
       </div>
     </footer>

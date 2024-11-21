@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import ExclusiveDeals from "./ExclusiveDeals";
 
 const BrandDetails = () => {
 const data = useLoaderData();
@@ -104,7 +105,8 @@ return (
   ))}
 </div>
 
-  
+{/* Exclusive Deals Section */}
+{/* <ExclusiveDeals></ExclusiveDeals> */}
 </div>
 );
 };
