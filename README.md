@@ -1,6 +1,3 @@
-Here’s a well-structured `README.md` for your **Discount & Coupon Management Platform**:  
-
----
 
 # 💰 Discounts Pro  
 
